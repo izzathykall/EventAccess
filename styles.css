@@ -38,3 +38,13 @@
 @keyframes eaDoorOpen{0%,100%{transform:scaleX(1)}50%{transform:scaleX(.74)}}
 /* Users who request reduced motion receive static, fully visible SVG markers. */
 @media(prefers-reduced-motion:reduce){.map-canvas .pin .pin-pictogram,.map-canvas .pin.active > circle:first-of-type,.map-canvas .pin .icon-animated-lift,.map-canvas .pin .icon-animated-aid,.map-canvas .pin .icon-animated-check,.map-canvas .pin .icon-animated-spark,.map-canvas .pin .icon-animated-door,.map-canvas .pin .icon-animated-sound,.map-canvas .pin .icon-animated-wave,.map-canvas .pin .pending-halo{animation:none!important;transform:none!important;transition:none!important;opacity:1!important}}
+/* Real QR launch points — independent links and printable, scannable images. */
+.qr-live-body{text-align:center}
+.qr-live-place{display:inline-flex;align-items:center;gap:8px;color:#0a796b;background:#e7f8ef;padding:10px 15px;border-radius:99px;font-size:13px;margin:9px 0 8px}
+.qr-live-place svg{height:17px;width:17px}
+.qr-live-body .qr-code{width:min(240px,78%);image-rendering:auto;display:block;margin:7px auto 16px}
+.qr-live-link{display:block;max-width:100%;font-size:11px;line-height:1.6;color:#056c65;overflow-wrap:anywhere;text-decoration:underline;padding:9px 12px;background:#f5faf8;border:1px solid #dfebe6;border-radius:9px;margin:15px 0}
+.qr-live-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin:15px 0}
+.qr-live-actions .btn{padding:11px 13px;font-size:11px}
+.qr-live-body .tiny-note{margin-top:12px}
+@media(max-width:760px){.qr-live-body .qr-code{width:min(205px,74%)}.qr-live-actions .btn{white-space:normal;min-height:42px}}
