@@ -12,3 +12,29 @@
 @media(max-width:390px){.crumb-home{display:none}.top-actions{gap:3px}.role-picker{width:78px;font-size:9.5px}.v3-staff-count strong{font-size:29px}}
 @media(max-width:760px){.split,.route-grid,.report-grid,.home-grid,.dash-layout,.v3-analytics-grid{grid-template-columns:minmax(0,1fr)}.split>*,.route-grid>*,.report-grid>*,.home-grid>*,.dash-layout>*,.map-panel,.info-stack{min-width:0}.map-toolbar{min-width:0;max-width:100%}.floor-pill{max-width:100%;white-space:normal}.v3-inline-feature{max-width:100%}}
 @media(min-width:761px) and (max-width:1040px){.hero{grid-template-columns:minmax(0,1fr)}.hero-map{min-height:205px;padding:0 25px 28px}.hero-graphic{max-width:320px}.main-content{padding:25px 20px 50px}.topbar{padding:0 18px}.top-actions .demo-chip{display:none}.home-grid,.split,.route-grid,.report-grid,.dash-layout,.v3-analytics-grid,.v3-tracker-grid,.v3-task-grid{grid-template-columns:minmax(0,1fr)}.info-stack{grid-template-columns:minmax(0,1fr)}.home-metrics,.dash-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-copy{padding:32px 30px 26px}.home-grid>*,.split>*,.route-grid>*,.report-grid>*{min-width:0}}
+
+/* EventAccess V3 Animated Venue Map: semantic SVG pictograms, no letter-coded pins. */
+.map-canvas .pin{outline:none}
+.map-canvas .pin > circle:first-of-type{transition:fill .22s ease,stroke .22s ease,filter .22s ease}
+.map-canvas .pin .pin-pictogram{overflow:visible;pointer-events:none;transform-origin:50% 50%;transform-box:fill-box;animation:eaPinFloat 3.2s ease-in-out infinite;animation-delay:calc(var(--pin-sequence) * -0.43s);filter:drop-shadow(0 1px 1px rgba(0,40,42,.18));}
+.map-canvas .pin.active .pin-pictogram{animation-duration:2.4s}
+.map-canvas .pin:hover .pin-pictogram,.map-canvas .pin:focus-visible .pin-pictogram{animation-play-state:paused;transform:scale(1.16);}
+.map-canvas .pin:hover > circle:first-of-type,.map-canvas .pin:focus-visible > circle:first-of-type{stroke:#c0ffe7;stroke-width:5;filter:drop-shadow(0 2px 9px rgba(0,124,111,.52))}
+.map-canvas .pin.active > circle:first-of-type{animation:eaPinHalo 3s ease-in-out infinite;}
+.map-canvas .pin .icon-animated-lift{transform-origin:center;animation:eaLift 2.6s ease-in-out infinite}
+.map-canvas .pin .icon-animated-aid{transform-origin:center;transform-box:fill-box;animation:eaAidPulse 2.4s ease-in-out infinite}
+.map-canvas .pin .icon-animated-check{stroke-dasharray:10 3;animation:eaTick 3.8s ease-in-out infinite}
+.map-canvas .pin .icon-animated-spark{transform-origin:center;transform-box:fill-box;animation:eaSpark 3.2s ease-in-out infinite}
+.map-canvas .pin .icon-animated-door{transform-origin:left center;transform-box:fill-box;animation:eaDoorOpen 4.2s ease-in-out infinite}
+.map-canvas .pin .icon-animated-sound{animation:eaTick 3.2s ease-in-out infinite}
+.map-canvas .pin .icon-animated-wave{animation:eaTick 3.4s ease-in-out infinite}
+.map-canvas .pin .pending-halo{animation:eaPinHalo 2.8s ease-in-out infinite}
+@keyframes eaPinFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-1.7px)}}
+@keyframes eaPinHalo{0%,100%{stroke:#fff;stroke-width:4}50%{stroke:#b9ffe2;stroke-width:5.4}}
+@keyframes eaLift{0%,100%{transform:translateY(0)}50%{transform:translateY(-1.7px)}}
+@keyframes eaAidPulse{0%,100%{transform:scale(1)}50%{transform:scale(.9)}}
+@keyframes eaTick{0%,100%{opacity:1;stroke-dashoffset:0}50%{opacity:.45;stroke-dashoffset:5}}
+@keyframes eaSpark{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(.82);opacity:.55}}
+@keyframes eaDoorOpen{0%,100%{transform:scaleX(1)}50%{transform:scaleX(.74)}}
+/* Users who request reduced motion receive static, fully visible SVG markers. */
+@media(prefers-reduced-motion:reduce){.map-canvas .pin .pin-pictogram,.map-canvas .pin.active > circle:first-of-type,.map-canvas .pin .icon-animated-lift,.map-canvas .pin .icon-animated-aid,.map-canvas .pin .icon-animated-check,.map-canvas .pin .icon-animated-spark,.map-canvas .pin .icon-animated-door,.map-canvas .pin .icon-animated-sound,.map-canvas .pin .icon-animated-wave,.map-canvas .pin .pending-halo{animation:none!important;transform:none!important;transition:none!important;opacity:1!important}}
