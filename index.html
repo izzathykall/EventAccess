@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#132f37" />
+<meta name="description" content="EventAccess V3 academic prototype: discover accessible facilities, simulate safer routes, report accessibility issues and coordinate organiser responses." />
+<title>EventAccess V3 — Inclusive by design</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar" aria-label="Primary navigation">
+    <a class="brand" href="#home" aria-label="EventAccess Home"><span class="brand-icon"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M6 17 16 8l10 9v10H6V17Z" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="m11 18 3 3 7-7" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Event<span class="brand-accent">Access</span><small>ACCESS FOR EVERYONE</small></span></a>
+    <div class="side-label">EXPLORE</div>
+    <nav class="nav-links" id="nav-links"></nav>
+    <div class="side-help"><div class="support-icon">✳</div><strong data-t="sidebarHelpTitle">Here to help you.</strong><p data-t="sidebarHelpText">An inclusive event starts with accessible information.</p><button class="help-button" type="button" id="sidebar-help-btn">Report accessibility issue <span>↗</span></button></div>
+    <div class="side-foot"><span class="status-dot"></span> EVENTACCESS V3<br><small>ACADEMIC CONCEPT PROTOTYPE</small></div>
+  </aside>
+  <div class="workspace">
+    <header class="topbar"><div class="crumb"><span class="crumb-home">EventAccess</span><span class="crumb-div">/</span><strong id="crumb-name">Overview</strong></div><div class="top-actions"><span class="demo-chip"><span class="pulse"></span><span id="demo-word">DEMO PROTOTYPE</span></span><button id="lang-button" class="top-button" type="button" aria-label="Switch language between English and Bahasa Melayu">BM</button><button id="contrast-button" class="top-button" type="button" title="Toggle high contrast" aria-label="Toggle high-contrast mode">◑</button><button id="text-button" class="top-button" type="button" title="Increase text size" aria-label="Toggle large-text mode">A+</button><select id="role-picker" aria-label="Simulation role" class="role-picker"><option value="attendee">Attendee</option><option value="organiser">Organiser</option><option value="staff">Staff</option></select><span class="avatar" aria-hidden="true">V3</span></div></header>
+    <main id="view" class="main-content" tabindex="-1"></main>
+  </div>
+</div>
+<div id="modal-root"></div>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="app.js" defer></script>
+<script src="v3.js" defer></script>
+</body>
+</html>
