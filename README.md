@@ -1,4 +1,4 @@
-# EventAccess V3 — Live GitHub Pages QR Locations
+# EventAccess V3 — Live QR + Smart Urgency Classification
 
 This is a GitHub Pages–ready academic **simulation**, based on EventAccess V3 with animated SVG facility icons.
 
@@ -7,7 +7,7 @@ This is a GitHub Pages–ready academic **simulation**, based on EventAccess V3 
 1. Extract the ZIP.
 2. Open the `EventAccess` repository at `github.com/izzathykall/EventAccess`.
 3. Upload the extracted **contents** to the repository root. Replace existing `index.html`, `styles.css`, `app.js`, `v3.js`, and upload the new `qr-live.js`.
-4. Upload/replace all images inside the `assets/` directory, keeping the folder name as `assets`.
+4. Upload/replace all images inside the `assets/` directory, keeping the folder name as `assets`. **Also upload the new `smart-urgency.js` script** at the repository root.
 5. Commit changes and check **Settings → Pages → Deploy from a branch → main → /(root)** (if Pages is not already enabled).
 6. Open `https://izzathykall.github.io/EventAccess/` and hard refresh if an old version is cached.
 
@@ -49,3 +49,9 @@ All file paths are relative, compatible with GitHub Pages' `/EventAccess/` repos
 ## Print the three QR checkpoints
 
 Open `qr-print.html` after uploading the full folder to GitHub Pages (`https://izzathykall.github.io/EventAccess/qr-print.html`) or in a browser with `assets/` next to it. Click **Print QR location cards**. The page is formatted for A4 landscape printing.
+
+## Smart Urgency update
+
+The Report Issue form now recommends Low, Medium or High based on incident type and the **fictional** venue network. Attendees can change the recommendation. The organiser can confirm a different final urgency during report review. Dashboard sorting considers open status first and urgency second, while Analytics shows the urgency distribution. These are transparent sample rules, **not** AI-based emergency risk assessment or verified venue conditions.
+
+See [`SMART_URGENCY_GUIDE.md`](SMART_URGENCY_GUIDE.md) for the precise decision rules and a step-by-step demonstration.
