@@ -1,4 +1,4 @@
-# EventAccess V3 — Live QR + Smart Urgency Classification
+# EventAccess V3 — Smart Urgency + Staff High Urgency Popup
 
 This is a GitHub Pages–ready academic **simulation**, based on EventAccess V3 with animated SVG facility icons.
 
@@ -55,3 +55,11 @@ Open `qr-print.html` after uploading the full folder to GitHub Pages (`https://i
 The Report Issue form now recommends Low, Medium or High based on incident type and the **fictional** venue network. Attendees can change the recommendation. The organiser can confirm a different final urgency during report review. Dashboard sorting considers open status first and urgency second, while Analytics shows the urgency distribution. These are transparent sample rules, **not** AI-based emergency risk assessment or verified venue conditions.
 
 See [`SMART_URGENCY_GUIDE.md`](SMART_URGENCY_GUIDE.md) for the precise decision rules and a step-by-step demonstration.
+
+## NEW: High Urgency Popup in Staff Mode
+
+An in-app High priority alert now opens automatically when the simulated **Staff Mode** receives **organiser-verified, team-assigned** High urgency tasks that have not been acknowledged on that browser. A bell icon shows the unread task count; staff may open the task or dismiss the notification without deleting the report. A sample fictional alert (`EA-3105`, Facilities Team) is included for easy demonstrations.
+
+**Important:** Upload the new **`staff-alerts.js`** file alongside `smart-urgency.js`, `qr-live.js`, `v3.js`, `app.js`, `styles.css` and `index.html`. The scripts are loaded in order by the provided `index.html`. See [`STAFF_ALERT_GUIDE.md`](STAFF_ALERT_GUIDE.md) for demo instructions.
+
+These are browser-local notifications, not real push alerts or emergency dispatch.

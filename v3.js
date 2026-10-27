@@ -36,7 +36,8 @@ const V3_SEEDS=[
  V3_sample('EA-3101','signage','registration','New','pending','Unassigned','Signage near registration is difficult to read from the accessible approach.'),
  V3_sample('EA-3102','blocked','eastcorridor','Resolved','verified','Facilities Team','Sample obstruction at the east corridor was cleared and checked.','high'),
  V3_sample('EA-3103','other','firstaid','In progress','verified','Accessibility Support','Attendee asked for clearer guidance to the first aid point.'),
- V3_sample('EA-3104','liftbroken','lift','Rejected','rejected','Unassigned','Example lift concern was not confirmed after checking.')
+ V3_sample('EA-3104','liftbroken','lift','Rejected','rejected','Unassigned','Example lift concern was not confirmed after checking.'),
+ V3_sample('EA-3105','other','firstaid','New','verified','Facilities Team','Example urgent access assistance required near the First Aid Point (demonstration task only).','high')
 ];
 function V3_load(){try{let v=JSON.parse(localStorage.getItem('ea3_reports'));if(Array.isArray(v))return v.filter(r=>r&&typeof r.id==='string'&&Array.isArray(r.history)).map(r=>({...r,verification:['pending','verified','rejected'].includes(r.verification)?r.verification:'pending'}))}catch(e){}return structuredClone(V3_SEEDS)}
 reports=V3_load();
